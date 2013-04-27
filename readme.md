@@ -65,7 +65,7 @@ Required: 1 Scrap Metal
 Item: Producted: Wire Kit, Unfilled Water Canteen
 
 Change log ver 1.0 - Inital Script creation
-Change log ver 2.0 - Created a new smelt folder.  rename smelt.sqf and move it into the smelt folder.  Created new scripts to smelt Engine Parts, Main Rotary Parts,  Fuel Tank, 
+Change log ver 2.1 - Created a new smelt folder.  rename smelt.sqf and move it into the smelt folder.  Created new scripts to smelt Engine Parts, Main Rotary Parts,  Fuel Tank, 
 	Wind Screen Glass, Wheel, and Unfilled Jerry Can.
 Change log ver 2.1 - Added new scripts to smelt heat packs, tents, sandbags, tank traps and wire kits.
 
@@ -74,8 +74,11 @@ Installation:
 Unpack your dayz mission pbo.
 
 *****************************************
-* Create a smelt folder 			  	*
-* Copy smelt_*.sqf  into smelt folder. *
+
+* Download smelt_*.sqf files 
+*  and exmaples https://github.com/piggd/piggdSmeltScrapMetal2.1.git
+* Create a smelt folder *
+* Copy smelt_*.sqf into smelt folder. *
 *****************************************
 
 Make a copy of or modify your existing custom variable.sqf
@@ -85,7 +88,7 @@ FIND
 
 ADD immediately after
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 Start------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 Start------------------------------------------------------------------------
 	s_player_smelt_engineparts =		-1;
 	s_player_smelt_fueltank =			-1;	
 	s_player_smelt_heatpack =			-1;	
@@ -98,7 +101,7 @@ ADD immediately after
 	s_player_smelt_wheel =				-1;	
 	s_player_smelt_windscreenglass =	-1;
 	s_player_smelt_wirekit =			-1;	
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End----------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End----------------------------------------------------------------------
 
 *******************************************************************************************************************************
 * Modify your fn_self_actions.sqf file, if new rememver to modify your compiles.sql to point to the custom n_self_actions.sqf *
@@ -116,7 +119,7 @@ FIND
 
 ADD immediately after
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
 	// Smelt Engine Parts
 	if (inflamed cursorTarget and _hasToolbox and _canDo) then {
 		if (s_player_smelt_engineparts < 0) then {
@@ -225,11 +228,11 @@ ADD immediately after
 		player removeAction s_player_smelt_wirekit;
 		s_player_smelt_wirekit = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
 	
 At The bootom of the file add:
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
 	player removeAction s_player_smelt_engineparts;
 	s_player_smelt_engineparts = -1;
 
@@ -265,7 +268,7 @@ At The bootom of the file add:
 
 	player removeAction s_player_smelt_wirekit;
 	s_player_smelt_wirekit = -1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
 
 
 Repack your PBO and upload it to the sever.

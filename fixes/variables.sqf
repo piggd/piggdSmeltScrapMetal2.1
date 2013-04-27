@@ -172,7 +172,7 @@ dayz_resetSelfActions = {
 	s_player_fire =			-1;
 	s_player_cook =			-1;
 	s_player_boil =			-1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 Start------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 Start------------------------------------------------------------------------
 	s_player_smelt_engineparts =		-1;
 	s_player_smelt_fueltank =			-1;	
 	s_player_smelt_heatpack =			-1;	
@@ -185,7 +185,7 @@ dayz_resetSelfActions = {
 	s_player_smelt_wheel =				-1;	
 	s_player_smelt_windscreenglass =	-1;
 	s_player_smelt_wirekit =			-1;	
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End----------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End----------------------------------------------------------------------
 	s_player_fireout =		-1;
 	s_player_butcher =		-1;
 	s_player_packtent = 	-1;

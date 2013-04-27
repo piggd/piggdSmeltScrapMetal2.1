@@ -153,7 +153,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_boil;
 		s_player_boil = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
 	// Smelt Engine Parts
 	if (inflamed cursorTarget and _hasToolbox and _canDo) then {
 		if (s_player_smelt_engineparts < 0) then {
@@ -262,7 +262,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_smelt_wirekit;
 		s_player_smelt_wirekit = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
 
 	if(cursorTarget == dayz_hasFire and _canDo) then {
 		if ((s_player_fireout < 0) and !(inflamed cursorTarget) and (player distance cursorTarget < 3)) then {
@@ -490,7 +490,7 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
 	player removeAction s_player_smelt_engineparts;
 	s_player_smelt_engineparts = -1;
 
@@ -526,4 +526,4 @@ if (_dogHandle > 0) then {
 
 	player removeAction s_player_smelt_wirekit;
 	s_player_smelt_wirekit = -1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.0 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------

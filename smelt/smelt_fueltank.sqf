@@ -57,5 +57,4 @@ if (_hasbottleitem and _hasitems) then {
         cutText [format[(localize  "str_build_01"),_parttext], "PLAIN DOWN"];
 } else {
         cutText [format[(localize  "str_build_failed_01"),_parttext], "PLAIN DOWN"];
-    };
 };

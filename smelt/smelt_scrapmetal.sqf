@@ -5,8 +5,8 @@
 //  Smelting is based on the boil code in standard dayz.  Modified by piggd to smelt cans into scrap metal.
 
 private["_hasboiledbottleitem","_hasbottleitem","_cansremoved","_hastinitem","_bottletext","_tin1text","_parttext","_tin2text","_tintext","_metalqty","_tincanqty","_sodaemptyqty","_cansreq","_dis","_sfx"];
-player removeAction s_player_smelt;
-s_player_smelt = -1;
+player removeAction s_player_smelt_scrapmetal;
+s_player_smelt_scrapmetal = -1;
 
 
 _hasbottleitem = "ItemWaterbottle" in magazines player;
@@ -66,5 +66,4 @@ if (_hasbottleitem and _hastinitem) then {
         cutText [format[(localize  "str_build_01"),_parttext], "PLAIN DOWN"];
 } else {
         cutText [format[(localize  "str_build_failed_01"),_parttext], "PLAIN DOWN"];
-    };
 };

@@ -57,7 +57,7 @@ Required: 1 Scrap Metal, 3 Heat Packs
 Item: Producted: Wheel, Unfilled Water Canteen
 
 Wind Screen Glass
-Required: 6 Jack Daniel Whisket Bottles
+Required: 3 Jack Daniel Whisket Bottles
 Item: Producted: Wind Screen Glass, Unfilled Water Canteen
 
 Wire Kit

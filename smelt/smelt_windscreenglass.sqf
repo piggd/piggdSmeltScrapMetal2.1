@@ -15,7 +15,7 @@ _hasboiledbottleitem = "ItemWaterbottleBoiled" in magazines player;
 _hasitems = false;
 _item1qty = {_x == "TrashJackDaniels"} count magazines player;
 // The required item quanity must be between 1 to 3 due to inventory constraints. 1 WB and 3 itens is max.
-_itemsreq = 6;
+_itemsreq = 3;
 _itemsremoved = 0;
 if ( _hasboiledbottleitem ) then {
 		_hasbottleitem = true;

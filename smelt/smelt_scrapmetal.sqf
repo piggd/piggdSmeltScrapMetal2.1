@@ -1,37 +1,42 @@
 // Script: smelt_scrapmetal.sqf
 // Author: piggd
-// Revision: 2.0
-// Date: 04222013
-//  Smelting is based on the boil code in standard dayz.  Modified by piggd to smelt cans into scrap metal.
+// Revision: 2.1
+// Date: 05022013
+//  Smelting is based on the boil code in standard dayz.  Modified by piggd to smelt cans into scrap metal. Modified to accomodate items in Chernaus.
 
-private["_hasboiledbottleitem","_hasbottleitem","_cansremoved","_hastinitem","_bottletext","_tin1text","_parttext","_tin2text","_tintext","_metalqty","_tincanqty","_sodaemptyqty","_cansreq","_dis","_sfx"];
+private["_hasboiledbottleitem","_hasbottleitem","_itemsremoved","_hastinitem","_bottletext","_item1text","_item2text","_item3text","_item4text","_item5text","_parttext","_itemtext","_itemqty","_item1qty","_item2qty","_item3qty","_item4qty","_item5qty","_itemsreq","_dis","_sfx"];
 player removeAction s_player_smelt_scrapmetal;
 s_player_smelt_scrapmetal = -1;
-
 
 _hasbottleitem = "ItemWaterbottle" in magazines player;
 _hasboiledbottleitem = "ItemWaterbottleBoiled" in magazines player;
 _hastinitem = false;
-_sodaemptyqty = {_x == "ItemSodaEmpty"} count magazines player;
-_tincanqty = {_x == "TrashTinCan"} count magazines player;
-_metalqty = _sodaemptyqty +_tincanqty;
-// The required can quanity must be between 1 to 11 due to inventory constraints. 1 WB and 11 cans is max.
-_cansreq = 6;
-_cansremoved = 0;
+_item1qty = {_x == "TrashTinCan"} count magazines player;
+_item2qty = {_x == "ItemSodaEmpty"} count magazines player;
+_item3qty = {_x == "ItemSodaCokeEmpty"} count magazines player;
+_item4qty = {_x == "ItemSodaPepsiEmpty"} count magazines player;
+_item5qty = {_x == "ItemSodaMdewEmpty"} count magazines player;
+_itemqty = _item1qty +_item2qty +_item3qty +_item4qty +_item4qty;
+// The required can quanity must be between low enough to accomodate the invenotry max.
+_itemsreq = 6;
+_itemsremoved = 0;
 if ( _hasboiledbottleitem ) then {
 		_hasbottleitem = true;
 };
- if (_metalqty >= _cansreq) then {
+ if (_itemqty >= _itemsreq) then {
     _hastinitem = true;
  };
 
 _bottletext = getText (configFile >> "CfgMagazines" >> "ItemWaterbottle" >> "displayName");
-_tin1text = getText (configFile >> "CfgMagazines" >> "TrashTinCan" >> "displayName");
-_tin2text = getText (configFile >> "CfgMagazines" >> "ItemSodaEmpty" >> "displayName");
-_tintext = format["%1 of %2 %3 / %4 required",_metalqty,_cansreq,_tin1text,_tin2text];
+_item1text = getText (configFile >> "CfgMagazines" >> "TrashTinCan" >> "displayName");
+_item2text = getText (configFile >> "CfgMagazines" >> "ItemSodaEmpty" >> "displayName");
+_item3text = getText (configFile >> "CfgMagazines" >> "ItemSodaCokeEmpty" >> "displayName");
+_item4text = getText (configFile >> "CfgMagazines" >> "ItemSodaPepsiEmpty" >> "displayName");
+_item5text = getText (configFile >> "CfgMagazines" >> "ItemSodaMdewEmpty" >> "displayName");
+_itemtext = format["%1 of %2 %3 / %4 / %5 / %6 / %7 required",_itemqty,_itemsreq,_item1text,_item2text,_item3text,_item4text,_item5text];
 _parttext = getText (configFile >> "CfgMagazines" >> "PartGeneric" >> "displayName");
 if (!_hasbottleitem) exitWith {cutText [format[(localize "str_player_31"),_bottletext,"smelt"] , "PLAIN DOWN"]};
-if (!_hastinitem) exitWith {cutText [format[(localize "str_player_31"),_tintext,"smelt"] , "PLAIN DOWN"]};
+if (!_hastinitem) exitWith {cutText [format[(localize "str_player_31"),_itemtext,"smelt"] , "PLAIN DOWN"]};
 
 if (_hasbottleitem and _hastinitem) then {
         player playActionNow "Medic";
@@ -47,19 +52,40 @@ if (_hasbottleitem and _hastinitem) then {
 		 } else {
 			player removeMagazine "ItemWaterbottle";
 		};
-		for "_x" from 1 to _cansreq do {
-      
-			if (_x <= _tincanqty and _cansremoved < _cansreq) then {
+		for "_x" from 1 to _itemsreq do {
+		
+			if (_x <= _item1qty and _itemsremoved < _itemsreq) then {
 				player removeMagazine "TrashTinCan";
-				_cansremoved = _cansremoved + 1;
+				_itemsremoved = _itemsremoved + 1;
+			};	
+		};	
+		for "_x" from 1 to _itemsreq do {
+      
+			if (_x <= _item2qty and _itemsremoved < _itemsreq) then {
+				player removeMagazine "ItemSodaEmpty";
+				_itemsremoved = _itemsremoved + 1;
 			};
 		};	
-		for "_x" from 1 to _cansreq do {
-		
-			if (_x <= _sodaemptyqty and _cansremoved < _cansreq) then {
-				player removeMagazine "ItemSodaEmpty";
-				_cansremoved = _cansremoved + 1;
-			};	
+		for "_x" from 1 to _itemsreq do {
+      
+			if (_x <= _item3qty and _itemsremoved < _itemsreq) then {
+				player removeMagazine "ItemSodaCokeEmpty";
+				_itemsremoved = _itemsremoved + 1;
+			};
+		};	
+		for "_x" from 1 to _itemsreq do {
+      
+			if (_x <= _item4qty and _itemsremoved < _itemsreq) then {
+				player removeMagazine "ItemSodaPepsiEmpty";
+				_itemsremoved = _itemsremoved + 1;
+			};
+		};	
+		for "_x" from 1 to _itemsreq do {
+      
+			if (_x <= _item5qty and _itemsremoved < _itemsreq) then {
+				player removeMagazine "ItemSodaMdewEmpty";
+				_itemsremoved = _itemsremoved + 1;
+			};
 		};	
 		player addMagazine "ItemWaterbottleUnfilled";
         player addMagazine "PartGeneric";

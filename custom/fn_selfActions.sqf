@@ -433,6 +433,44 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	s_player_butcher = -1;
 	player removeAction s_player_cook;
 	s_player_cook = -1;
+	// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
+	player removeAction s_player_smelt_engineparts;
+	s_player_smelt_engineparts = -1;
+
+	player removeAction s_player_smelt_fueltank;
+	s_player_smelt_fueltank = -1;
+
+	player removeAction s_player_smelt_heatpack;
+	s_player_smelt_heatpack = -1;
+
+	player removeAction s_player_smelt_jerrycan;
+	s_player_smelt_jerrycan = -1;
+
+	player removeAction s_player_smelt_mainrotoraryparts;
+	s_player_smelt_mainrotoraryparts = -1;
+
+	player removeAction s_player_smelt_sandbag;
+	s_player_smelt_sandbag = -1;
+
+	player removeAction s_player_smelt_scrapmetal;
+	s_player_smelt_scrapmetal = -1;
+
+	player removeAction s_player_smelt_tanktrap;
+	s_player_smelt_tanktrap = -1;
+
+	player removeAction s_player_smelt_tent;
+	s_player_smelt_tent = -1;
+
+	player removeAction s_player_smelt_wheel;
+	s_player_smelt_wheel = -1;
+
+	player removeAction s_player_smelt_windscreenglass;
+	s_player_smelt_windscreenglass = -1;
+
+	player removeAction s_player_smelt_wirekit;
+	s_player_smelt_wirekit = -1;
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
+
 	player removeAction s_player_boil;
 	s_player_boil = -1;
 	player removeAction s_player_fireout;
@@ -490,40 +528,3 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
-	player removeAction s_player_smelt_engineparts;
-	s_player_smelt_engineparts = -1;
-
-	player removeAction s_player_smelt_fueltank;
-	s_player_smelt_fueltank = -1;
-
-	player removeAction s_player_smelt_heatpack;
-	s_player_smelt_heatpack = -1;
-
-	player removeAction s_player_smelt_jerrycan;
-	s_player_smelt_jerrycan = -1;
-
-	player removeAction s_player_smelt_mainrotoraryparts;
-	s_player_smelt_mainrotoraryparts = -1;
-
-	player removeAction s_player_smelt_sandbag;
-	s_player_smelt_sandbag = -1;
-
-	player removeAction s_player_smelt_scrapmetal;
-	s_player_smelt_scrapmetal = -1;
-
-	player removeAction s_player_smelt_tanktrap;
-	s_player_smelt_tanktrap = -1;
-
-	player removeAction s_player_smelt_tent;
-	s_player_smelt_tent = -1;
-
-	player removeAction s_player_smelt_wheel;
-	s_player_smelt_wheel = -1;
-
-	player removeAction s_player_smelt_windscreenglass;
-	s_player_smelt_windscreenglass = -1;
-
-	player removeAction s_player_smelt_wirekit;
-	s_player_smelt_wirekit = -1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------

@@ -230,7 +230,10 @@ ADD immediately after
 	};
 // ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
 	
-At The bootom of the file add:
+At The bootom of the file find :
+	player removeAction s_player_cook;
+	s_player_cook = -1;
+Add this after these two lines.
 
 // ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
 	player removeAction s_player_smelt_engineparts;

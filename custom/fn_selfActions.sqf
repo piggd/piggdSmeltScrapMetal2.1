@@ -153,7 +153,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_boil;
 		s_player_boil = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
+	// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 Start------------------------------------------------------------------------
 	// Smelt Engine Parts
 	if (inflamed cursorTarget and _hasToolbox and _canDo) then {
 		if (s_player_smelt_engineparts < 0) then {
@@ -262,7 +262,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 		player removeAction s_player_smelt_wirekit;
 		s_player_smelt_wirekit = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 End------------------------------------------------------------------------
 
 	if(cursorTarget == dayz_hasFire and _canDo) then {
 		if ((s_player_fireout < 0) and !(inflamed cursorTarget) and (player distance cursorTarget < 3)) then {
@@ -433,7 +433,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 	s_player_butcher = -1;
 	player removeAction s_player_cook;
 	s_player_cook = -1;
-	// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2------------------------------------------------------------------------
 	player removeAction s_player_smelt_engineparts;
 	s_player_smelt_engineparts = -1;
 
@@ -469,8 +469,7 @@ if (!isNull cursorTarget and !_inVehicle and (player distance cursorTarget < 4))
 
 	player removeAction s_player_smelt_wirekit;
 	s_player_smelt_wirekit = -1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
-
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 End------------------------------------------------------------------------
 	player removeAction s_player_boil;
 	s_player_boil = -1;
 	player removeAction s_player_fireout;

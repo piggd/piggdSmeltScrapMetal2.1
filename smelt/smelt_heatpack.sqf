@@ -18,7 +18,7 @@ _item3qty = {_x == "HandChemBlue"} count magazines player;
 _item4qty = {_x == "HandRoadFlare"} count magazines player;
 _itemqty = _item1qty +_item2qty +_item3qty +_item4qty;
 // The required can quanity must be between 1 to 11 due to inventory constraints. 1 WB and 11 cans is max.
-_itemsreq = 3;
+_itemsreq = 2;
 _itemsremoved = 0;
 if ( _hasboiledbottleitem ) then {
 		_hasbottleitem = true;

@@ -1,9 +1,9 @@
 // Script: smelt_windowscreenglass.sqf
 // Author: piggd
-// Revision: 2.0
-// Date: 04232013
+// Revision: 2.1
+// Date: 09122013
 //  Smelting is based on the boil code in standard dayz.  Modified by piggd to smelt one item into another.
-
+// Drop requirement from 3 to 2
 
 private["_hasboiledbottleitem","_hasbottleitem","_itemsremoved","_hasitems","_bottletext","_item1text","_parttext","_itemtext","_item1qty","_itemsreq","_dis","_sfx"];
 player removeAction s_player_smelt_windscreenglass;
@@ -15,7 +15,7 @@ _hasboiledbottleitem = "ItemWaterbottleBoiled" in magazines player;
 _hasitems = false;
 _item1qty = {_x == "TrashJackDaniels"} count magazines player;
 // The required item quanity must be between 1 to 3 due to inventory constraints. 1 WB and 3 itens is max.
-_itemsreq = 3;
+_itemsreq = 2;
 _itemsremoved = 0;
 if ( _hasboiledbottleitem ) then {
 		_hasbottleitem = true;

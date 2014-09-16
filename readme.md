@@ -2,8 +2,8 @@
 * Mod Name:  piggd Smelt Scrap Metal    *
 * Author: piggd							*
 * Email: dayzpiggd@gmail.com			*
-* Version: 2.1							*
-* Date:	04/27/2013						*
+* Version: 2.2							*
+* Date:	12/9/2013						*
 *****************************************
 
 Information:
@@ -11,63 +11,11 @@ I really hate farming and having to dump 50-75% of the items I gather outside th
 Really how many road flares or cans of pepsi do you really need?  So this mod will you to turn your trash into useful items.  
 This mod will allow you to make multiple materials into other useful items.  It requires fileed canteen of water (boiled or unboiled), tool box and a fire for all receipes.
 
-All Required:
-Camp Fire
-Tool Box
-Filled Water Canteen ( boiled or unboiled)
-
-Engine Parts
-Required: 3 Scrap Meetal
-Item: Producted: Engine Parts, Unfilled Water Canteen
-
-Fuel Tank
-Required: 2 Scrap Meetal
-Item: Producted: Fuel Tank, Unfilled Water Canteen
-
-Heat Pack
-Required: 3 Chem Sticks or Road Flares
-Item: Producted: Heat Pack, Unfilled Water Canteen
-
-Jerry Can
-Required: 1 Scrap Metal
-Item: Producted: Unfilled Jerry Can, Unfilled Water Canteen
-
-Main Rotary Parts
-Required: 3 Scrap Meetal
-Item: Producted: Main Rotary Parts, Unfilled Water Canteen
-
-Sandbags
-Required: 1 Heat Pack and 5 Bandages
-Item: Producted: Sandbags, Unfilled Water Canteen
-
-Scrap Metal
-Required: 6 empty Soda or Tin cans
-Item: Producted: Scrap Metal, Unfilled Water Canteen
-
-Tank Trap
-Required: 1 Scrap Metal
-Item: Producted: Tank Trap, Unfilled Water Canteen
-
-Tent
-Required: 1 Scrap Metal and 3 Heat Packs
-Item: Producted: Tent, Unfilled Water Canteen
-
-Wheel
-Required: 1 Scrap Metal, 3 Heat Packs
-Item: Producted: Wheel, Unfilled Water Canteen
-
-Wind Screen Glass
-Required: 3 Jack Daniel Whisket Bottles
-Item: Producted: Wind Screen Glass, Unfilled Water Canteen
-
-Wire Kit
-Required: 1 Scrap Metal
-Item: Producted: Wire Kit, Unfilled Water Canteen
-
 Change log ver 1.0 - Inital Script creation
 Change log ver 2.1 - Created a new smelt folder.  rename smelt.sqf and move it into the smelt folder.  Created new scripts to smelt Engine Parts, Main Rotary Parts,  Fuel Tank, 
 	Wind Screen Glass, Wheel, and Unfilled Jerry Can.
 Change log ver 2.1 - Added new scripts to smelt heat packs, tents, sandbags, tank traps and wire kits.
+Change log ver 2.2 - Updated different ingredient.
 
 Installation:
 
@@ -88,7 +36,7 @@ FIND
 
 ADD immediately after
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 Start------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 Start------------------------------------------------------------------------
 	s_player_smelt_engineparts =		-1;
 	s_player_smelt_fueltank =			-1;	
 	s_player_smelt_heatpack =			-1;	
@@ -101,7 +49,7 @@ ADD immediately after
 	s_player_smelt_wheel =				-1;	
 	s_player_smelt_windscreenglass =	-1;
 	s_player_smelt_wirekit =			-1;	
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End----------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 End----------------------------------------------------------------------
 
 *******************************************************************************************************************************
 * Modify your fn_self_actions.sqf file, if new rememver to modify your compiles.sql to point to the custom n_self_actions.sqf *
@@ -119,7 +67,7 @@ FIND
 
 ADD immediately after
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
+	// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 Start------------------------------------------------------------------------
 	// Smelt Engine Parts
 	if (inflamed cursorTarget and _hasToolbox and _canDo) then {
 		if (s_player_smelt_engineparts < 0) then {
@@ -228,14 +176,15 @@ ADD immediately after
 		player removeAction s_player_smelt_wirekit;
 		s_player_smelt_wirekit = -1;
 	};
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 End------------------------------------------------------------------------
+
 	
 At The bootom of the file find :
 	player removeAction s_player_cook;
 	s_player_cook = -1;
 Add this after these two lines.
 
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2------------------------------------------------------------------------
 	player removeAction s_player_smelt_engineparts;
 	s_player_smelt_engineparts = -1;
 
@@ -271,7 +220,7 @@ Add this after these two lines.
 
 	player removeAction s_player_smelt_wirekit;
 	s_player_smelt_wirekit = -1;
-// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.1 End------------------------------------------------------------------------
+// ------------------------------------------------------------------------Piggd Smelt Scrap Metal ver 2.2 End------------------------------------------------------------------------
 
 
 Repack your PBO and upload it to the sever.
